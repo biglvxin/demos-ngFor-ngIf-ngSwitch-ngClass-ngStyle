@@ -1,0 +1,30 @@
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>sex</th>
+        <th>age</th>
+        <th>details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of students; let i = index;">
+        <th>{{i}}:{{item.name}}</th>
+        <th>{{i}}:{{item.sex}}</th>
+        <th>{{i}}:{{item.age}}</th>
+        <th >
+          <tr *ngFor="let data of item.details; index as d">
+            {{d}}:
+            {{data.month}}--{{data.maths}}--{{data.chinese}}--{{data.english}}
+          </tr>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngFor="let key of objectKeys(studentsObj)">
+  {{key}} : {{studentsObj[key]}}
+</div>
+
+
