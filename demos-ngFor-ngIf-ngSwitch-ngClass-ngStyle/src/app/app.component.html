@@ -28,3 +28,42 @@
 </div>
 
 
+<p *ngIf="true">
+  Expression is true and ngIf is true.
+  This paragraph is in the DOM.
+</p>
+<p *ngIf="false">
+  Expression is false and ngIf is false.
+  This paragraph is not in the DOM.
+</p>
+
+<div *ngIf="isValid;else other_content1">content here1 ...</div>
+<ng-template #other_content1>other content here1...</ng-template>
+<br>
+<div *ngIf="isValid;then content2 else other_content2">here is ignored</div>
+<ng-template #content2>content here2...</ng-template>
+<ng-template #other_content2>other content here2...</ng-template>
+<br>
+<div *ngIf="isValid;then content3">consent here3...</div>
+<ng-template #content3>content here3...</ng-template>
+<br>
+
+
+<div [ngSwitch]="stud[2]?.className">
+  <div *ngSwitchCase="'1'">1 班</div>
+  <div *ngSwitchCase="'2'" >2 班</div>
+  <div *ngSwitchDefault>1班，2班都不属于/没有该属性</div>
+</div>
+
+
+<div [ngStyle]="{'background-color':'green'}">基本用法</div>
+<div [ngStyle]="{'background-color':'123' === 'zxc' ? 'green' : 'red' }">判断，字符可以用样式名代替</div>
+<div [ngStyle]="{'background': setNameLineClass(1)}">函数</div>
+
+<br>
+
+<div [ngClass]="{'text-success':true}">基本用法</div>
+<div [ngClass]="{'text-success':'zxc' == 'zxc'}">判断</div>
+<div [ngClass]="chooseTrClass(false)">函数</div>
+
+

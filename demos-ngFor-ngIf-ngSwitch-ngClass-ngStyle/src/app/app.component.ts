@@ -48,6 +48,12 @@ export class AppComponent implements OnInit {
     sex: '女',
   };
   public objectKeys = Object.keys;
+  public isValid = false;
+  public stud = [
+    {id: 1, name: 'lvxin', className: '2'},
+    { id: 1, name: 'zhangming', className: '1' },
+    { id: 1, name: 'lvxin' },
+  ];
   ngOnInit() {
     console.log(this.student);
     console.log(this.studentsInit);
@@ -56,5 +62,21 @@ export class AppComponent implements OnInit {
     console.log(StudentEnumTest.ID);
     console.log(this.studentInterfaceTest);
     console.log(this.studentInterfaceTests);
+  }
+  setNameLineClass(data) {
+    switch (data) {
+      case 0:
+        return 'green';
+        case 1:
+        return 'yellow';
+        case 2:
+          return 'red';
+    }
+  }
+  chooseTrClass(data: boolean) {
+    if (data) {
+      return 'text-success';
+    }
+    return 'text-faild';
   }
 }

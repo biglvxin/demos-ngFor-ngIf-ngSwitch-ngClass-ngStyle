@@ -1,0 +1,8 @@
+.text-success {
+    background-color: green;
+    color: #fff;
+}
+.text-faild {
+    background-color: #f00;
+    color: #fff;
+}
